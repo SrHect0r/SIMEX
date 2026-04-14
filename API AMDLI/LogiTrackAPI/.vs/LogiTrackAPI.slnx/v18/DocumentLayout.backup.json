@@ -1,0 +1,518 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\controllers\\ofertescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\controllers\\ofertescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\controllers\\usuariscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\controllers\\usuariscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\models\\usuari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\models\\usuari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\models\\transportiste.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\models\\transportiste.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\models\\trackingstep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\models\\trackingstep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\models\\tipusvalidacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\models\\tipusvalidacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\models\\tipustransport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\models\\tipustransport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\models\\tipusincoterm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\models\\tipusincoterm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\models\\tipusflux.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\models\\tipusflux.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\models\\tipuscontenidor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\models\\tipuscontenidor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\models\\tipuscarrega.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\models\\tipuscarrega.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\models\\simex10context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\models\\simex10context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\models\\rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\models\\rol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\models\\port.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\models\\port.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\models\\paisso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\models\\paisso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\models\\oferte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\models\\oferte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\models\\liniestransportmaritim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\models\\liniestransportmaritim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\models\\incoterm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\models\\incoterm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\models\\estatsoferte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\models\\estatsoferte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\models\\ciutat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\models\\ciutat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\models\\aeroport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\models\\aeroport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\controllers\\paissoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\controllers\\paissoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\controllers\\ciutatscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\controllers\\ciutatscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\controllers\\rolscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\controllers\\rolscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\controllers\\trackingstepscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\controllers\\trackingstepscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\controllers\\estatsofertescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\controllers\\estatsofertescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\controllers\\clientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\controllers\\clientscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|c:\\users\\sokio\\desktop\\api amdli\\logitrackapi\\logitrackapi\\logitrackapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{329AEC5B-4203-5D67-6B72-54E65B28A9E1}|LogiTrackAPI\\LogiTrackAPI.csproj|solutionrelative:logitrackapi\\logitrackapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Properties\\launchSettings.json",
+              "RelativeToolTip": "LogiTrackAPI\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAkwAYAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-13T16:47:12.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Usuari.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\Usuari.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Models\\Usuari.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\Usuari.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Models\\Usuari.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T13:29:17.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Transportiste.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\Transportiste.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Models\\Transportiste.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\Transportiste.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Models\\Transportiste.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T13:29:13.203Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TrackingStep.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\TrackingStep.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Models\\TrackingStep.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\TrackingStep.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Models\\TrackingStep.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T13:29:09.402Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TipusValidacion.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\TipusValidacion.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Models\\TipusValidacion.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\TipusValidacion.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Models\\TipusValidacion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T13:29:05.605Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TipusTransport.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\TipusTransport.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Models\\TipusTransport.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\TipusTransport.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Models\\TipusTransport.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T13:29:01.477Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OfertesController.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Controllers\\OfertesController.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Controllers\\OfertesController.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Controllers\\OfertesController.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Controllers\\OfertesController.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAA8wEcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T16:46:09.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Program.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Program.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAswBUAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T13:52:33.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsuarisController.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Controllers\\UsuarisController.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Controllers\\UsuarisController.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Controllers\\UsuarisController.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Controllers\\UsuarisController.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAADwvy8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T16:04:06.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TipusIncoterm.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\TipusIncoterm.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Models\\TipusIncoterm.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\TipusIncoterm.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Models\\TipusIncoterm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T13:28:57.459Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TipusFlux.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\TipusFlux.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Models\\TipusFlux.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\TipusFlux.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Models\\TipusFlux.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T13:28:53.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TipusContenidor.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\TipusContenidor.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Models\\TipusContenidor.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\TipusContenidor.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Models\\TipusContenidor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T13:28:49.749Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TipusCarrega.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\TipusCarrega.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Models\\TipusCarrega.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\TipusCarrega.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Models\\TipusCarrega.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T13:28:45.417Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Rol.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\Rol.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Models\\Rol.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\Rol.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Models\\Rol.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T13:28:33.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Port.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\Port.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Models\\Port.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\Port.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Models\\Port.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T13:28:27.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Paisso.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\Paisso.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Models\\Paisso.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\Paisso.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Models\\Paisso.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T13:28:23.505Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Oferte.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\Oferte.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Models\\Oferte.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\Oferte.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Models\\Oferte.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAiwFMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T13:28:18.687Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "LiniesTransportMaritim.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\LiniesTransportMaritim.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Models\\LiniesTransportMaritim.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\LiniesTransportMaritim.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Models\\LiniesTransportMaritim.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T13:28:14.022Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Incoterm.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\Incoterm.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Models\\Incoterm.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\Incoterm.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Models\\Incoterm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T13:28:08.294Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "EstatsOferte.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\EstatsOferte.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Models\\EstatsOferte.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\EstatsOferte.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Models\\EstatsOferte.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T13:28:02.913Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Simex10Context.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\Simex10Context.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Models\\Simex10Context.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\Simex10Context.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Models\\Simex10Context.cs",
+              "ViewState": "AgIAAIkBAAAAAAAAAAAwwK4BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T15:59:01.056Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Client.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\Client.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Models\\Client.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\Client.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Models\\Client.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T13:27:57.97Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Ciutat.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\Ciutat.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Models\\Ciutat.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\Ciutat.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Models\\Ciutat.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-13T13:27:51.878Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "PaissoesController.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Controllers\\PaissoesController.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Controllers\\PaissoesController.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Controllers\\PaissoesController.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Controllers\\PaissoesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T17:04:39.458Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "CiutatsController.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Controllers\\CiutatsController.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Controllers\\CiutatsController.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Controllers\\CiutatsController.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Controllers\\CiutatsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T17:02:08.233Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "RolsController.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Controllers\\RolsController.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Controllers\\RolsController.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Controllers\\RolsController.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Controllers\\RolsController.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAswAcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T16:47:44.901Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "TrackingStepsController.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Controllers\\TrackingStepsController.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Controllers\\TrackingStepsController.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Controllers\\TrackingStepsController.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Controllers\\TrackingStepsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T16:47:11.502Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Aeroport.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\Aeroport.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Models\\Aeroport.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Models\\Aeroport.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Models\\Aeroport.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T16:35:54.404Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "EstatsOfertesController.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Controllers\\EstatsOfertesController.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Controllers\\EstatsOfertesController.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Controllers\\EstatsOfertesController.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Controllers\\EstatsOfertesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T17:03:20.787Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ClientsController.cs",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Controllers\\ClientsController.cs",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\Controllers\\ClientsController.cs",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\Controllers\\ClientsController.cs",
+              "RelativeToolTip": "LogiTrackAPI\\Controllers\\ClientsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T16:42:22.373Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "LogiTrackAPI.csproj",
+              "DocumentMoniker": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\LogiTrackAPI.csproj",
+              "RelativeDocumentMoniker": "LogiTrackAPI\\LogiTrackAPI.csproj",
+              "ToolTip": "C:\\Users\\sokio\\Desktop\\API AMDLI\\LogiTrackAPI\\LogiTrackAPI\\LogiTrackAPI.csproj",
+              "RelativeToolTip": "LogiTrackAPI\\LogiTrackAPI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-04-09T15:51:23.986Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
