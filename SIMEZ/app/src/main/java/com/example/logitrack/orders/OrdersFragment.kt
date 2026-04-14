@@ -42,7 +42,7 @@ class OrdersFragment : Fragment() {
 
         lifecycleScope.launch {
             try {
-                val response = if (rolId == 2) {
+                val response = if (rolId == 2 || rolId == 1) {
                     RetrofitClient.instance.getOfertes()
                 } else {
                     RetrofitClient.instance.getOfertesByClient(userId)
@@ -72,6 +72,14 @@ class OrdersFragment : Fragment() {
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
             override fun onTabReselected(tab: TabLayout.Tab?) {}
         })
+
+        val fabCrear = view.findViewById<com.google.android.material.floatingactionbutton.FloatingActionButton>(R.id.fabCrearOferta)
+        if (rolId == 23 || rolId == 1) {
+            fabCrear.visibility = View.VISIBLE
+            fabCrear.setOnClickListener {
+                startActivity(Intent(requireContext(), com.example.logitrack.create.CreateOfertaActivity::class.java))
+            }
+        }
     }
 
     private fun mostrarOfertes(ofertes: List<Oferte>) {
@@ -101,18 +109,26 @@ class OfertesAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val oferta = items[position]
-        holder.tvId.text = "Oferta #${oferta.id}"
-        holder.tvEstat.text = when (oferta.estatOfertaId) {
-            11 -> "Estat: Pendent"
-            12 -> "Estat: Acceptada"
-            13 -> "Estat: Rebutjada"
-            14 -> "Estat: En trànsit"
-            15 -> "Estat: Finalitzada"
-            else -> "Estat: ${oferta.estatOfertaId}"
+        holder.tvId.text = "LOG-2024-${oferta.id}"
+        
+        val context = holder.itemView.context
+        val (text, bgColor, textColor) = when (oferta.estatOfertaId) {
+            11 -> Triple("PENDENT", R.color.status_pending_bg, R.color.status_pending_text)
+            12 -> Triple("ACCEPTADA", R.color.status_recollit_bg, R.color.status_recollit_text)
+            14 -> Triple("EN TRÀNSIT", R.color.status_transit_bg, R.color.status_transit_text)
+            15 -> Triple("LLIURADA", R.color.status_delivered_bg, R.color.status_delivered_text)
+            else -> Triple("OFERTA", R.color.gray_100, R.color.gray_600)
         }
-        holder.tvData.text = "Data: ${oferta.dataCreacio}"
+
+        holder.tvEstat.text = text
+        holder.tvEstat.backgroundTintList = android.content.res.ColorStateList.valueOf(androidx.core.content.ContextCompat.getColor(context, bgColor))
+        holder.tvEstat.setTextColor(androidx.core.content.ContextCompat.getColor(context, textColor))
+        holder.tvEstat.setBackgroundResource(R.drawable.input_bg)
+
+        holder.tvData.text = oferta.dataCreacio
         holder.itemView.setOnClickListener { onClick(oferta) }
     }
 
     override fun getItemCount() = items.size
+
 }

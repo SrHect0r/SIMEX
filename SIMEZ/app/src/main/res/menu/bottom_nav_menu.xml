@@ -2,13 +2,37 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/nav_inici"
+        android:icon="@drawable/ic_home"
+        android:title="Inici"/>
+
+    <item
         android:id="@+id/nav_orders"
-        android:icon="@android:drawable/ic_menu_agenda"
-        android:title="Ofertes"/>
+        android:icon="@drawable/ic_assignment"
+        android:title="Pressupostos"/>
+
+    <item
+        android:id="@+id/nav_documents"
+        android:icon="@drawable/ic_description"
+        android:title="Documents"/>
+
+    <item
+        android:id="@+id/nav_historial"
+        android:icon="@drawable/ic_history"
+        android:title="Historial"/>
 
     <item
         android:id="@+id/nav_profile"
-        android:icon="@android:drawable/ic_menu_myplaces"
+        android:icon="@drawable/ic_person"
         android:title="Perfil"/>
+
+    <!-- BottomNavigationView solo soporta hasta 5 elementos.
+         Se ha comentado el 6º elemento para evitar el crash. -->
+    <!--
+    <item
+        android:id="@+id/nav_joc"
+        android:icon="@drawable/ic_play_arrow"
+        android:title="Joc"/>
+    -->
 
 </menu>

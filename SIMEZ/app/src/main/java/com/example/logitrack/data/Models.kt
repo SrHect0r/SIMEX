@@ -15,7 +15,7 @@ data class Oferte(
     val portOrigenId: Int?, val portDestiId: Int?, val aeroportOrigenId: Int?,
     val aeroportDestiId: Int?, val liniaTransportMaritimId: Int?,
     val estatOfertaId: Int, val operadorId: Int, val dataCreacio: String,
-    val dataValidessaInicial: String?, val dataValidessaFina: String?,
+    val dataValidesaInicial: String?, val dataValidesaFinal: String?,
     val raoRebuig: String?, val tipusContenidorId: Int?
 )
 data class Paisso(val id: Int, val nom: String)
@@ -31,3 +31,10 @@ data class TrackingStep(val id: Int, val ordre: Int?, val nom: String?)
 data class Transportiste(val id: Int, val nom: String, val ciutatId: Int)
 data class Usuari(val id: Int, val correu: String, val contrasenya: String, val nom: String, val cognoms: String, val rolId: Int)
 data class LoginRequest(val correu: String, val contrasenya: String)
+data class Document(
+    val id: Int,
+    val ofertaId: Int,
+    val nom: String,
+    val tipus: String,
+    val url: String
+)

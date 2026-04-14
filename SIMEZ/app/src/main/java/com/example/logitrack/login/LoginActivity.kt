@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import android.widget.TextView
 import com.example.logitrack.MainActivity
 import com.example.logitrack.R
 import com.example.logitrack.data.LoginRequest
@@ -22,6 +23,36 @@ class LoginActivity : AppCompatActivity() {
         val etEmail = findViewById<EditText>(R.id.etEmail)
         val etPassword = findViewById<EditText>(R.id.etPassword)
         val btnLogin = findViewById<Button>(R.id.btnLogin)
+        val btnRoleClient = findViewById<TextView>(R.id.btnRoleClient)
+        val btnRoleEmployee = findViewById<TextView>(R.id.btnRoleEmployee)
+
+        var selectedRole = "client" // por defecto
+
+        btnRoleClient.setOnClickListener {
+            selectedRole = "client"
+            btnRoleClient.setBackgroundResource(android.R.color.white)
+            btnRoleClient.setTextColor(getColor(R.color.brand_primary))
+            btnRoleClient.setTypeface(null, android.graphics.Typeface.BOLD)
+            
+            btnRoleEmployee.setBackgroundResource(android.R.color.transparent)
+            btnRoleEmployee.setTextColor(getColor(R.color.gray_500))
+            btnRoleEmployee.setTypeface(null, android.graphics.Typeface.NORMAL)
+            
+            etEmail.setHint("client@empresa.cat")
+        }
+
+        btnRoleEmployee.setOnClickListener {
+            selectedRole = "employee"
+            btnRoleEmployee.setBackgroundResource(android.R.color.white)
+            btnRoleEmployee.setTextColor(getColor(R.color.brand_primary))
+            btnRoleEmployee.setTypeface(null, android.graphics.Typeface.BOLD)
+            
+            btnRoleClient.setBackgroundResource(android.R.color.transparent)
+            btnRoleClient.setTextColor(getColor(R.color.gray_500))
+            btnRoleClient.setTypeface(null, android.graphics.Typeface.NORMAL)
+            
+            etEmail.setHint("empleat@logitrack.cat")
+        }
 
         btnLogin.setOnClickListener {
             val email = etEmail.text.toString().trim()

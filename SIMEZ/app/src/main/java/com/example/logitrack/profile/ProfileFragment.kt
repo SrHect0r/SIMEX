@@ -26,7 +26,6 @@ class ProfileFragment : Fragment() {
 
         val tvNom = view.findViewById<TextView>(R.id.tvNom)
         val tvCorreu = view.findViewById<TextView>(R.id.tvCorreu)
-        val tvRol = view.findViewById<TextView>(R.id.tvRol)
         val btnLogout = view.findViewById<Button>(R.id.btnLogout)
 
         val prefs = requireContext().getSharedPreferences("logitrack", 0)
@@ -37,9 +36,8 @@ class ProfileFragment : Fragment() {
                 val response = RetrofitClient.instance.getUsuari(userId)
                 if (response.isSuccessful) {
                     val usuari = response.body()!!
-                    tvNom.text = "Nom: ${usuari.nom} ${usuari.cognoms}"
-                    tvCorreu.text = "Correu: ${usuari.correu}"
-                    tvRol.text = if (usuari.rolId == 2) "Rol: Agent Comercial" else "Rol: Client"
+                    tvNom.text = "${usuari.nom} ${usuari.cognoms}"
+                    tvCorreu.text = usuari.correu
                 }
             } catch (e: Exception) {
                 Toast.makeText(requireContext(), e.message ?: "Error", Toast.LENGTH_SHORT).show()

@@ -1,6 +1,7 @@
 package com.example.logitrack.detail
 
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.logitrack.R
+import com.example.logitrack.data.Document
 import com.example.logitrack.data.Oferte
 import com.example.logitrack.data.RebutjarRequest
 import com.example.logitrack.data.TrackingStep
@@ -36,18 +38,21 @@ class DetailActivity : AppCompatActivity() {
         val tvEstat = findViewById<TextView>(R.id.tvDetailEstat)
         val tvData = findViewById<TextView>(R.id.tvDetailData)
         val recycler = findViewById<RecyclerView>(R.id.recyclerTracking)
+        val recyclerDocs = findViewById<RecyclerView>(R.id.recyclerDocuments)
         val btnNext = findViewById<Button>(R.id.btnNextEstat)
         val btnAcceptar = findViewById<Button>(R.id.btnAcceptar)
         val btnRebutjar = findViewById<Button>(R.id.btnRebutjar)
 
         recycler.layoutManager = LinearLayoutManager(this)
+        recyclerDocs.layoutManager = LinearLayoutManager(this)
 
-        if (rolId == 2) btnNext.visibility = View.VISIBLE
+        if (rolId == 23) btnNext.visibility = View.VISIBLE
 
         lifecycleScope.launch {
             try {
                 val responseOferta = RetrofitClient.instance.getOferte(ofertaId)
                 val responseTracking = RetrofitClient.instance.getTrackingSteps()
+                val responseDocs = RetrofitClient.instance.getDocumentsByOferta(ofertaId)
 
                 if (responseOferta.isSuccessful && responseTracking.isSuccessful) {
                     oferta = responseOferta.body()
@@ -62,7 +67,6 @@ class DetailActivity : AppCompatActivity() {
 
                         btnNext.setOnClickListener { avancarEstat(o) }
 
-                        // Mostrar botones solo si es client y estat es Pendent (11)
                         if (rolId != 2 && o.estatOfertaId == 11) {
                             btnAcceptar.visibility = View.VISIBLE
                             btnRebutjar.visibility = View.VISIBLE
@@ -107,6 +111,16 @@ class DetailActivity : AppCompatActivity() {
                         }
                     }
                 }
+
+                // Documentos
+                if (responseDocs.isSuccessful) {
+                    val documents = responseDocs.body() ?: emptyList()
+                    recyclerDocs.adapter = DocumentsAdapter(documents) { doc ->
+                        val intent = Intent(Intent.ACTION_VIEW, android.net.Uri.parse(doc.url))
+                        startActivity(intent)
+                    }
+                }
+
             } catch (e: Exception) {
                 Toast.makeText(this@DetailActivity, e.message ?: "Error", Toast.LENGTH_SHORT).show()
             }
@@ -160,4 +174,30 @@ class TrackingAdapter(
     }
 
     override fun getItemCount() = steps.size
+}
+
+class DocumentsAdapter(
+    private val items: List<Document>,
+    private val onDescarregar: (Document) -> Unit
+) : RecyclerView.Adapter<DocumentsAdapter.ViewHolder>() {
+
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val tvNom: TextView = view.findViewById(R.id.tvDocNom)
+        val tvTipus: TextView = view.findViewById(R.id.tvDocTipus)
+        val btnDescarregar: Button = view.findViewById(R.id.btnDescarregar)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_document, parent, false)
+        return ViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val doc = items[position]
+        holder.tvNom.text = doc.nom
+        holder.tvTipus.text = doc.tipus
+        holder.btnDescarregar.setOnClickListener { onDescarregar(doc) }
+    }
+
+    override fun getItemCount() = items.size
 }
