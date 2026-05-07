@@ -65,6 +65,7 @@ class LoginActivity : AppCompatActivity() {
                     val response = RetrofitClient.instance.login(LoginRequest(email, password))
                     if (response.isSuccessful) {
                         val usuari = response.body()!!
+                        android.util.Log.d("DEBUG_LOGIN", "rolId guardat = ${usuari.rolId}")
                         val prefs = getSharedPreferences(Constants.PREFS_NAME, MODE_PRIVATE)
                         prefs.edit()
                             .putInt(Constants.PREF_USER_ID, usuari.id)
