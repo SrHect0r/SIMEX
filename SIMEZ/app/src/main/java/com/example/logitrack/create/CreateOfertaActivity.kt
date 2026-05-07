@@ -8,6 +8,7 @@ import androidx.lifecycle.lifecycleScope
 import com.example.logitrack.R
 import com.example.logitrack.data.*
 import com.example.logitrack.network.RetrofitClient
+import com.example.logitrack.utils.Constants
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
@@ -188,7 +189,7 @@ class CreateOfertaActivity : AppCompatActivity() {
                 aeroportOrigenId = if (transport.id == 2) aeroports.getOrNull(spinnerAeroportOrigen.selectedItemPosition)?.id else null,
                 aeroportDestiId = if (transport.id == 2) aeroports.getOrNull(spinnerAeroportDesti.selectedItemPosition)?.id else null,
                 liniaTransportMaritimId = if (transport.id == 1) liniesMaritimes.getOrNull(spinnerLiniaMaritima.selectedItemPosition)?.id else null,
-                estatOfertaId = 11,
+                estatOfertaId = Constants.ESTAT_PENDENT,
                 operadorId = agentId,
                 dataCreacio = dateStr,
                 dataValidesaInicial = dateStr,

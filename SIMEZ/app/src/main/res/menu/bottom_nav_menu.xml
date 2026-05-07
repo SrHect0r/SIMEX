@@ -26,13 +26,4 @@
         android:icon="@drawable/ic_person"
         android:title="Perfil"/>
 
-    <!-- BottomNavigationView solo soporta hasta 5 elementos.
-         Se ha comentado el 6º elemento para evitar el crash. -->
-    <!--
-    <item
-        android:id="@+id/nav_joc"
-        android:icon="@drawable/ic_play_arrow"
-        android:title="Joc"/>
-    -->
-
 </menu>

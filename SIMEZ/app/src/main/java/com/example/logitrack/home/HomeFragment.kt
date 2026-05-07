@@ -15,6 +15,7 @@ import com.example.logitrack.R
 import com.example.logitrack.data.Oferte
 import com.example.logitrack.detail.DetailActivity
 import com.example.logitrack.network.RetrofitClient
+import com.example.logitrack.utils.Constants
 import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
@@ -39,7 +40,7 @@ class HomeFragment : Fragment() {
 
         val fabCrear = view.findViewById<com.google.android.material.floatingactionbutton.FloatingActionButton>(R.id.fabCrearOfertaHome)
         
-        if (rolId == 23 || rolId == 1) { 
+        if (rolId == Constants.ROL_AGENT || rolId == Constants.ROL_ADMIN) { 
             fabCrear.visibility = View.VISIBLE
             fabCrear.setOnClickListener {
                 startActivity(Intent(requireContext(), com.example.logitrack.create.CreateOfertaActivity::class.java))
@@ -67,7 +68,7 @@ class HomeFragment : Fragment() {
 
         lifecycleScope.launch {
             try {
-                val response = if (rolId == 23 || rolId == 1) {
+                val response = if (rolId == Constants.ROL_AGENT || rolId == Constants.ROL_ADMIN) {
                     RetrofitClient.instance.getOfertes()
                 } else {
                     RetrofitClient.instance.getOfertesByClient(userId)
@@ -76,7 +77,7 @@ class HomeFragment : Fragment() {
                 if (response.isSuccessful) {
                     val ofertes = response.body() ?: emptyList()
 
-                    val pendents = ofertes.filter { it.estatOfertaId == 11 }
+                    val pendents = ofertes.filter { it.estatOfertaId == Constants.ESTAT_PENDENT }
                     tvCountPendents.text = pendents.size.toString()
                     recyclerPendents.adapter = HomeOfertesAdapter(pendents) { oferta ->
                         val intent = Intent(requireContext(), DetailActivity::class.java)
@@ -84,7 +85,7 @@ class HomeFragment : Fragment() {
                         startActivity(intent)
                     }
 
-                    val actives = ofertes.filter { it.estatOfertaId in listOf(12, 14) }
+                    val actives = ofertes.filter { it.estatOfertaId in listOf(Constants.ESTAT_ACCEPTADA, Constants.ESTAT_EN_TRANSIT) }
                     tvCountActives.text = actives.size.toString()
                     recyclerActives.adapter = HomeOfertesAdapter(actives) { oferta ->
                         val intent = Intent(requireContext(), DetailActivity::class.java)
@@ -119,26 +120,26 @@ class HomeOfertesAdapter(
         val oferta = items[position]
         holder.tvId.text = "Oferta #${oferta.id}"
         holder.tvEstat.text = when (oferta.estatOfertaId) {
-            11 -> "⏳ Pendent"
-            12 -> "Aceptada"
-            13 -> "Rebutjada"
-            14 -> "🚢 En trànsit"
-            15 -> "Lliurat"
+            Constants.ESTAT_PENDENT -> "⏳ Pendent"
+            Constants.ESTAT_ACCEPTADA -> "Aceptada"
+            Constants.ESTAT_REBUTJADA -> "Rebutjada"
+            Constants.ESTAT_EN_TRANSIT -> "🚢 En trànsit"
+            Constants.ESTAT_LLIURADA -> "Lliurat"
             else -> "Estat: ${oferta.estatOfertaId}"
         }
 
         when (oferta.estatOfertaId) {
-            12, 15 -> { 
+            Constants.ESTAT_ACCEPTADA, Constants.ESTAT_LLIURADA -> { 
                 holder.tvEstat.setBackgroundResource(R.drawable.status_badge_bg)
                 holder.tvEstat.backgroundTintList = android.content.res.ColorStateList.valueOf(android.graphics.Color.parseColor("#DCFCE7"))
                 holder.tvEstat.setTextColor(android.graphics.Color.parseColor("#15803D"))
             }
-            11 -> { 
+            Constants.ESTAT_PENDENT -> { 
                 holder.tvEstat.setBackgroundResource(R.drawable.status_badge_bg)
                 holder.tvEstat.backgroundTintList = android.content.res.ColorStateList.valueOf(android.graphics.Color.parseColor("#FEF3C7"))
                 holder.tvEstat.setTextColor(android.graphics.Color.parseColor("#B45309"))
             }
-            14 -> {
+            Constants.ESTAT_EN_TRANSIT -> {
                 holder.tvEstat.setBackgroundResource(R.drawable.status_badge_bg)
                 holder.tvEstat.backgroundTintList = android.content.res.ColorStateList.valueOf(android.graphics.Color.parseColor("#DBEAFE"))
                 holder.tvEstat.setTextColor(android.graphics.Color.parseColor("#1D4ED8"))

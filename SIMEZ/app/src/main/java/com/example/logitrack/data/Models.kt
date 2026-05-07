@@ -27,14 +27,16 @@ data class TipusFlux(val id: Int, val tipus: String)
 data class TipusIncoterm(val id: Int, val codi: String?, val nom: String?)
 data class TipusTransport(val id: Int, val tipus: String)
 data class TipusValidacion(val id: Int, val tipus: String)
+
+data class LoginRequest(val correu: String, val contrasenya: String)
 data class TrackingStep(val id: Int, val ordre: Int?, val nom: String?)
 data class Transportiste(val id: Int, val nom: String, val ciutatId: Int)
-data class Usuari(val id: Int, val correu: String, val contrasenya: String, val nom: String, val cognoms: String, val rolId: Int)
-data class LoginRequest(val correu: String, val contrasenya: String)
-data class Document(
+data class Usuari( val id: Int, val correu: String, val contrasenya: String, val nom: String, val cognoms: String, @com.google.gson.annotations.SerializedName("rol_id") val rolId: Int )data class Document(
     val id: Int,
     val ofertaId: Int,
     val nom: String,
     val tipus: String,
     val url: String
+
+
 )

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.logitrack.R
 import com.example.logitrack.data.Oferte
 import com.example.logitrack.network.RetrofitClient
+import com.example.logitrack.utils.Constants
 import kotlinx.coroutines.launch
 
 class HistorialFragment : Fragment() {
@@ -33,15 +34,15 @@ class HistorialFragment : Fragment() {
 
         lifecycleScope.launch {
             try {
-                val response = if (rolId == 2) {
+                val response = if (rolId == Constants.ROL_AGENT || rolId == Constants.ROL_ADMIN) {
                     RetrofitClient.instance.getOfertes()
                 } else {
                     RetrofitClient.instance.getOfertesByClient(userId)
                 }
 
                 if (response.isSuccessful) {
-                    // Filtra solo les completades (estat 15)
-                    val completades = response.body()?.filter { it.estatOfertaId == 15 } ?: emptyList()
+                    // Filtra solo les completades (estat LLIURADA)
+                    val completades = response.body()?.filter { it.estatOfertaId == Constants.ESTAT_LLIURADA } ?: emptyList()
                     recycler.adapter = HistorialAdapter(completades)
                 }
             } catch (e: Exception) {

@@ -26,18 +26,16 @@ class LoginActivity : AppCompatActivity() {
         val btnRoleClient = findViewById<TextView>(R.id.btnRoleClient)
         val btnRoleEmployee = findViewById<TextView>(R.id.btnRoleEmployee)
 
-        var selectedRole = "client" // por defecto
+        var selectedRole = "client"
 
         btnRoleClient.setOnClickListener {
             selectedRole = "client"
             btnRoleClient.setBackgroundResource(android.R.color.white)
             btnRoleClient.setTextColor(getColor(R.color.brand_primary))
             btnRoleClient.setTypeface(null, android.graphics.Typeface.BOLD)
-            
             btnRoleEmployee.setBackgroundResource(android.R.color.transparent)
             btnRoleEmployee.setTextColor(getColor(R.color.gray_500))
             btnRoleEmployee.setTypeface(null, android.graphics.Typeface.NORMAL)
-            
             etEmail.setHint("client@empresa.cat")
         }
 
@@ -46,11 +44,9 @@ class LoginActivity : AppCompatActivity() {
             btnRoleEmployee.setBackgroundResource(android.R.color.white)
             btnRoleEmployee.setTextColor(getColor(R.color.brand_primary))
             btnRoleEmployee.setTypeface(null, android.graphics.Typeface.BOLD)
-            
             btnRoleClient.setBackgroundResource(android.R.color.transparent)
             btnRoleClient.setTextColor(getColor(R.color.gray_500))
             btnRoleClient.setTypeface(null, android.graphics.Typeface.NORMAL)
-            
             etEmail.setHint("empleat@logitrack.cat")
         }
 

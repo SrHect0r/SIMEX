@@ -20,6 +20,7 @@ import com.example.logitrack.data.Oferte
 import com.example.logitrack.data.RebutjarRequest
 import com.example.logitrack.data.TrackingStep
 import com.example.logitrack.network.RetrofitClient
+import com.example.logitrack.utils.Constants
 import kotlinx.coroutines.launch
 
 class DetailActivity : AppCompatActivity() {
@@ -46,7 +47,7 @@ class DetailActivity : AppCompatActivity() {
         recycler.layoutManager = LinearLayoutManager(this)
         recyclerDocs.layoutManager = LinearLayoutManager(this)
 
-        if (rolId == 23) btnNext.visibility = View.VISIBLE
+        if (rolId == Constants.ROL_AGENT) btnNext.visibility = View.VISIBLE
 
         lifecycleScope.launch {
             try {
@@ -67,7 +68,7 @@ class DetailActivity : AppCompatActivity() {
 
                         btnNext.setOnClickListener { avancarEstat(o) }
 
-                        if (rolId != 2 && o.estatOfertaId == 11) {
+                        if (rolId == Constants.ROL_AGENT && o.estatOfertaId == Constants.ESTAT_PENDENT) {
                             btnAcceptar.visibility = View.VISIBLE
                             btnRebutjar.visibility = View.VISIBLE
                         }

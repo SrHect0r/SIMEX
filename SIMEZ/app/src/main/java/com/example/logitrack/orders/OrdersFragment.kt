@@ -16,6 +16,7 @@ import com.example.logitrack.data.Oferte
 import com.example.logitrack.detail.DetailActivity
 import com.example.logitrack.network.RetrofitClient
 import com.google.android.material.tabs.TabLayout
+import com.example.logitrack.utils.Constants
 import kotlinx.coroutines.launch
 
 class OrdersFragment : Fragment() {
@@ -42,7 +43,7 @@ class OrdersFragment : Fragment() {
 
         lifecycleScope.launch {
             try {
-                val response = if (rolId == 2 || rolId == 1) {
+                val response = if (rolId == Constants.ROL_AGENT || rolId == Constants.ROL_ADMIN) {
                     RetrofitClient.instance.getOfertes()
                 } else {
                     RetrofitClient.instance.getOfertesByClient(userId)
@@ -62,9 +63,9 @@ class OrdersFragment : Fragment() {
         tabFilter.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 val filtrades = when (tab?.position) {
-                    1 -> todesOfertes.filter { it.estatOfertaId == 11 } // Pendent
-                    2 -> todesOfertes.filter { it.estatOfertaId == 12 } // Acceptada
-                    3 -> todesOfertes.filter { it.estatOfertaId == 14 } // En trànsit
+                    1 -> todesOfertes.filter { it.estatOfertaId == Constants.ESTAT_PENDENT }
+                    2 -> todesOfertes.filter { it.estatOfertaId == Constants.ESTAT_ACCEPTADA }
+                    3 -> todesOfertes.filter { it.estatOfertaId == Constants.ESTAT_EN_TRANSIT }
                     else -> todesOfertes
                 }
                 mostrarOfertes(filtrades)
@@ -74,7 +75,7 @@ class OrdersFragment : Fragment() {
         })
 
         val fabCrear = view.findViewById<com.google.android.material.floatingactionbutton.FloatingActionButton>(R.id.fabCrearOferta)
-        if (rolId == 23 || rolId == 1) {
+        if (rolId == Constants.ROL_AGENT || rolId == Constants.ROL_ADMIN) {
             fabCrear.visibility = View.VISIBLE
             fabCrear.setOnClickListener {
                 startActivity(Intent(requireContext(), com.example.logitrack.create.CreateOfertaActivity::class.java))
@@ -109,26 +110,28 @@ class OfertesAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val oferta = items[position]
-        holder.tvId.text = "LOG-2024-${oferta.id}"
-        
         val context = holder.itemView.context
+
+        holder.tvId.text = "LOG-2024-${oferta.id}"
+        holder.tvData.text = oferta.dataCreacio
+
         val (text, bgColor, textColor) = when (oferta.estatOfertaId) {
-            11 -> Triple("PENDENT", R.color.status_pending_bg, R.color.status_pending_text)
-            12 -> Triple("ACCEPTADA", R.color.status_recollit_bg, R.color.status_recollit_text)
-            14 -> Triple("EN TRÀNSIT", R.color.status_transit_bg, R.color.status_transit_text)
-            15 -> Triple("LLIURADA", R.color.status_delivered_bg, R.color.status_delivered_text)
+            Constants.ESTAT_PENDENT -> Triple("PENDENT", R.color.status_pending_bg, R.color.status_pending_text)
+            Constants.ESTAT_ACCEPTADA -> Triple("ACCEPTADA", R.color.status_recollit_bg, R.color.status_recollit_text)
+            Constants.ESTAT_EN_TRANSIT -> Triple("EN TRÀNSIT", R.color.status_transit_bg, R.color.status_transit_text)
+            Constants.ESTAT_LLIURADA -> Triple("LLIURADA", R.color.status_delivered_bg, R.color.status_delivered_text)
             else -> Triple("OFERTA", R.color.gray_100, R.color.gray_600)
         }
 
         holder.tvEstat.text = text
-        holder.tvEstat.backgroundTintList = android.content.res.ColorStateList.valueOf(androidx.core.content.ContextCompat.getColor(context, bgColor))
+        holder.tvEstat.backgroundTintList = android.content.res.ColorStateList.valueOf(
+            androidx.core.content.ContextCompat.getColor(context, bgColor)
+        )
         holder.tvEstat.setTextColor(androidx.core.content.ContextCompat.getColor(context, textColor))
         holder.tvEstat.setBackgroundResource(R.drawable.input_bg)
 
-        holder.tvData.text = oferta.dataCreacio
         holder.itemView.setOnClickListener { onClick(oferta) }
     }
 
     override fun getItemCount() = items.size
-
 }
