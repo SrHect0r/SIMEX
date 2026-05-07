@@ -25,4 +25,16 @@ object Constants {
     const val PREF_COGNOMS  = "userCognoms"
     const val PREF_CORREU   = "userCorreu"
     const val PREF_ROL_ID   = "rolId"
+
+    // Seguretat - En producció aquestes claus haurien d'estar al Android Keystore
+    const val AES_KEY_ENCRYPTION = "1234567890123456"
+    const val AES_IV_ENCRYPTION  = "1234567890123456"
+
+    // Tipus transport
+    const val TRANSPORT_MARITIM    = 1
+    const val TRANSPORT_AERI       = 2
+    const val TRANSPORT_TERRESTRE  = 3
+
+    // Validació per defecte
+    const val TIPUS_VALIDACIO_DEFAULT = 9
 }

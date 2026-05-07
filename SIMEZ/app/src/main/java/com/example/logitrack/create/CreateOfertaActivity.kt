@@ -34,14 +34,14 @@ class CreateOfertaActivity : AppCompatActivity() {
         val spinnerCarrega = findViewById<Spinner>(R.id.spinnerCarrega)
         val spinnerIncoterm = findViewById<Spinner>(R.id.spinnerIncoterm)
         val spinnerClient = findViewById<Spinner>(R.id.spinnerClient)
-        
+
         val spinnerPortOrigen = findViewById<Spinner>(R.id.spinnerPortOrigen)
         val spinnerPortDesti = findViewById<Spinner>(R.id.spinnerPortDesti)
         val spinnerAeroportOrigen = findViewById<Spinner>(R.id.spinnerAeroportOrigen)
         val spinnerAeroportDesti = findViewById<Spinner>(R.id.spinnerAeroportDesti)
         val spinnerLiniaMaritima = findViewById<Spinner>(R.id.spinnerLiniaMaritima)
         val spinnerTipusContenidor = findViewById<Spinner>(R.id.spinnerTipusContenidor)
-        
+
         val tvPortOrigen = findViewById<TextView>(R.id.tvPortOrigen)
         val tvPortDesti = findViewById<TextView>(R.id.tvPortDesti)
         val tvAeroportOrigen = findViewById<TextView>(R.id.tvAeroportOrigen)
@@ -54,8 +54,8 @@ class CreateOfertaActivity : AppCompatActivity() {
         val etComentaris = findViewById<EditText>(R.id.etComentaris)
         val btnCrear = findViewById<Button>(R.id.btnCrearOferta)
 
-        val prefs = getSharedPreferences("logitrack", MODE_PRIVATE)
-        val agentId = prefs.getInt("userId", -1)
+        val prefs = getSharedPreferences(Constants.PREFS_NAME, MODE_PRIVATE)
+        val agentId = prefs.getInt(Constants.PREF_USER_ID, -1)
 
         lifecycleScope.launch {
             try {
@@ -74,11 +74,11 @@ class CreateOfertaActivity : AppCompatActivity() {
                 spinnerCarrega.adapter = ArrayAdapter(this@CreateOfertaActivity, android.R.layout.simple_spinner_dropdown_item, carregues.map { it.tipus })
                 spinnerIncoterm.adapter = ArrayAdapter(this@CreateOfertaActivity, android.R.layout.simple_spinner_dropdown_item, incoterms.map { it.id.toString() })
                 spinnerClient.adapter = ArrayAdapter(this@CreateOfertaActivity, android.R.layout.simple_spinner_dropdown_item, clients.map { it.id.toString() })
-                
+
                 val portNames = ports.map { it.nom }
                 spinnerPortOrigen.adapter = ArrayAdapter(this@CreateOfertaActivity, android.R.layout.simple_spinner_dropdown_item, portNames)
                 spinnerPortDesti.adapter = ArrayAdapter(this@CreateOfertaActivity, android.R.layout.simple_spinner_dropdown_item, portNames)
-                
+
                 val aeroNames = aeroports.map { it.nom }
                 spinnerAeroportOrigen.adapter = ArrayAdapter(this@CreateOfertaActivity, android.R.layout.simple_spinner_dropdown_item, aeroNames)
                 spinnerAeroportDesti.adapter = ArrayAdapter(this@CreateOfertaActivity, android.R.layout.simple_spinner_dropdown_item, aeroNames)
@@ -94,9 +94,8 @@ class CreateOfertaActivity : AppCompatActivity() {
         spinnerTransport.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 val transport = transports.getOrNull(position)
-                // Marítim = 1, Aeri = 2, Terrestre = 3
                 when (transport?.id) {
-                    1 -> {
+                    Constants.TRANSPORT_MARITIM -> {
                         tvPortOrigen.visibility = View.VISIBLE
                         spinnerPortOrigen.visibility = View.VISIBLE
                         tvPortDesti.visibility = View.VISIBLE
@@ -105,13 +104,12 @@ class CreateOfertaActivity : AppCompatActivity() {
                         spinnerLiniaMaritima.visibility = View.VISIBLE
                         tvTipusContenidor.visibility = View.VISIBLE
                         spinnerTipusContenidor.visibility = View.VISIBLE
-                        
                         tvAeroportOrigen.visibility = View.GONE
                         spinnerAeroportOrigen.visibility = View.GONE
                         tvAeroportDesti.visibility = View.GONE
                         spinnerAeroportDesti.visibility = View.GONE
                     }
-                    2 -> {
+                    Constants.TRANSPORT_AERI -> {
                         tvPortOrigen.visibility = View.GONE
                         spinnerPortOrigen.visibility = View.GONE
                         tvPortDesti.visibility = View.GONE
@@ -120,7 +118,6 @@ class CreateOfertaActivity : AppCompatActivity() {
                         spinnerLiniaMaritima.visibility = View.GONE
                         tvTipusContenidor.visibility = View.GONE
                         spinnerTipusContenidor.visibility = View.GONE
-                        
                         tvAeroportOrigen.visibility = View.VISIBLE
                         spinnerAeroportOrigen.visibility = View.VISIBLE
                         tvAeroportDesti.visibility = View.VISIBLE
@@ -183,19 +180,19 @@ class CreateOfertaActivity : AppCompatActivity() {
                 transportistaId = null,
                 pesBrut = pesBrut,
                 volum = volum,
-                tipusValidacioId = 9,
-                portOrigenId = if (transport.id == 1) ports.getOrNull(spinnerPortOrigen.selectedItemPosition)?.id else null,
-                portDestiId = if (transport.id == 1) ports.getOrNull(spinnerPortDesti.selectedItemPosition)?.id else null,
-                aeroportOrigenId = if (transport.id == 2) aeroports.getOrNull(spinnerAeroportOrigen.selectedItemPosition)?.id else null,
-                aeroportDestiId = if (transport.id == 2) aeroports.getOrNull(spinnerAeroportDesti.selectedItemPosition)?.id else null,
-                liniaTransportMaritimId = if (transport.id == 1) liniesMaritimes.getOrNull(spinnerLiniaMaritima.selectedItemPosition)?.id else null,
+                tipusValidacioId = Constants.TIPUS_VALIDACIO_DEFAULT,
+                portOrigenId = if (transport.id == Constants.TRANSPORT_MARITIM) ports.getOrNull(spinnerPortOrigen.selectedItemPosition)?.id else null,
+                portDestiId = if (transport.id == Constants.TRANSPORT_MARITIM) ports.getOrNull(spinnerPortDesti.selectedItemPosition)?.id else null,
+                aeroportOrigenId = if (transport.id == Constants.TRANSPORT_AERI) aeroports.getOrNull(spinnerAeroportOrigen.selectedItemPosition)?.id else null,
+                aeroportDestiId = if (transport.id == Constants.TRANSPORT_AERI) aeroports.getOrNull(spinnerAeroportDesti.selectedItemPosition)?.id else null,
+                liniaTransportMaritimId = if (transport.id == Constants.TRANSPORT_MARITIM) liniesMaritimes.getOrNull(spinnerLiniaMaritima.selectedItemPosition)?.id else null,
                 estatOfertaId = Constants.ESTAT_PENDENT,
                 operadorId = agentId,
                 dataCreacio = dateStr,
                 dataValidesaInicial = dateStr,
                 dataValidesaFinal = dateStr,
                 raoRebuig = null,
-                tipusContenidorId = if (transport.id == 1) tipusContenidors.getOrNull(spinnerTipusContenidor.selectedItemPosition)?.id else null
+                tipusContenidorId = if (transport.id == Constants.TRANSPORT_MARITIM) tipusContenidors.getOrNull(spinnerTipusContenidor.selectedItemPosition)?.id else null
             )
 
             lifecycleScope.launch {

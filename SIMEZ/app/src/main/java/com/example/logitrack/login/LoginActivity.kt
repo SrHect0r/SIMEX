@@ -12,6 +12,7 @@ import com.example.logitrack.MainActivity
 import com.example.logitrack.R
 import com.example.logitrack.data.LoginRequest
 import com.example.logitrack.network.RetrofitClient
+import com.example.logitrack.utils.Constants
 import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
@@ -64,13 +65,13 @@ class LoginActivity : AppCompatActivity() {
                     val response = RetrofitClient.instance.login(LoginRequest(email, password))
                     if (response.isSuccessful) {
                         val usuari = response.body()!!
-                        val prefs = getSharedPreferences("logitrack", MODE_PRIVATE)
+                        val prefs = getSharedPreferences(Constants.PREFS_NAME, MODE_PRIVATE)
                         prefs.edit()
-                            .putInt("userId", usuari.id)
-                            .putString("userName", usuari.nom)
-                            .putString("userCognoms", usuari.cognoms)
-                            .putString("userCorreu", usuari.correu)
-                            .putInt("rolId", usuari.rolId)
+                            .putInt(Constants.PREF_USER_ID, usuari.id)
+                            .putString(Constants.PREF_USER_NOM, usuari.nom)
+                            .putString(Constants.PREF_COGNOMS, usuari.cognoms)
+                            .putString(Constants.PREF_CORREU, usuari.correu)
+                            .putInt(Constants.PREF_ROL_ID, usuari.rolId)
                             .apply()
 
                         startActivity(Intent(this@LoginActivity, MainActivity::class.java))

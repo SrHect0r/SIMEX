@@ -27,9 +27,9 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val prefs = requireContext().getSharedPreferences("logitrack", 0)
-        val nom = prefs.getString("userName", "")
-        val rolId = prefs.getInt("rolId", -1)
+        val prefs = requireContext().getSharedPreferences(Constants.PREFS_NAME, 0)
+        val nom = prefs.getString(Constants.PREF_USER_NOM, "")
+        val rolId = prefs.getInt(Constants.PREF_ROL_ID, -1)
 
         view.findViewById<TextView>(R.id.tvBenvinguda).text = "Bon dia, $nom"
 
@@ -57,9 +57,9 @@ class HomeFragment : Fragment() {
 
     private fun loadOfertes() {
         val view = view ?: return
-        val prefs = requireContext().getSharedPreferences("logitrack", 0)
-        val userId = prefs.getInt("userId", -1)
-        val rolId = prefs.getInt("rolId", -1)
+        val prefs = requireContext().getSharedPreferences(Constants.PREFS_NAME, 0)
+        val userId = prefs.getInt(Constants.PREF_USER_ID, -1)
+        val rolId = prefs.getInt(Constants.PREF_ROL_ID, -1)
 
         val recyclerPendents = view.findViewById<RecyclerView>(R.id.recyclerPendents)
         val recyclerActives = view.findViewById<RecyclerView>(R.id.recyclerActives)

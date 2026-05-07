@@ -33,7 +33,7 @@ class DetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detail)
 
         val ofertaId = intent.getIntExtra("ofertaId", -1)
-        val rolId = getSharedPreferences("logitrack", MODE_PRIVATE).getInt("rolId", -1)
+        val rolId = getSharedPreferences(Constants.PREFS_NAME, MODE_PRIVATE).getInt(Constants.PREF_ROL_ID, -1)
 
         val tvTitle = findViewById<TextView>(R.id.tvDetailTitle)
         val tvEstat = findViewById<TextView>(R.id.tvDetailEstat)

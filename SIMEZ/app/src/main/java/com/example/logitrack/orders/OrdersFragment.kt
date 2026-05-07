@@ -37,9 +37,9 @@ class OrdersFragment : Fragment() {
 
         val tabFilter = view.findViewById<TabLayout>(R.id.tabFilter)
 
-        val prefs = requireContext().getSharedPreferences("logitrack", 0)
-        val userId = prefs.getInt("userId", -1)
-        val rolId = prefs.getInt("rolId", -1)
+        val prefs = requireContext().getSharedPreferences(Constants.PREFS_NAME, 0)
+        val userId = prefs.getInt(Constants.PREF_USER_ID, -1)
+        val rolId = prefs.getInt(Constants.PREF_ROL_ID, -1)
 
         lifecycleScope.launch {
             try {

@@ -18,6 +18,7 @@ import com.example.logitrack.R
 import com.example.logitrack.login.LoginActivity
 import com.example.logitrack.network.DniSocketClient
 import com.example.logitrack.network.RetrofitClient
+import com.example.logitrack.utils.Constants
 import com.google.android.material.button.MaterialButton
 import kotlinx.coroutines.launch
 
@@ -29,7 +30,7 @@ class ProfileFragment : Fragment() {
     private val pickFrontal = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
         uri?.let {
             uriFrontal = it
-            view?.findViewById<ImageView>(R.id.ivFrontalIcon)?.setImageResource(R.drawable.ic_upload) // O un icono de "OK"
+            view?.findViewById<ImageView>(R.id.ivFrontalIcon)?.setImageResource(R.drawable.ic_upload)
             view?.findViewById<TextView>(R.id.tvFrontalText)?.text = "Foto frontal carregada"
         }
     }
@@ -58,10 +59,9 @@ class ProfileFragment : Fragment() {
         val etDniNumber  = view.findViewById<EditText>(R.id.etDniNumber)
         val btnJoc       = view.findViewById<LinearLayout>(R.id.btnAnarAlJoc)
 
-        val prefs  = requireContext().getSharedPreferences("logitrack", 0)
-        val userId = prefs.getInt("userId", -1)
+        val prefs  = requireContext().getSharedPreferences(Constants.PREFS_NAME, 0)
+        val userId = prefs.getInt(Constants.PREF_USER_ID, -1)
 
-        // Cargar datos del usuario
         lifecycleScope.launch {
             try {
                 val response = RetrofitClient.instance.getUsuari(userId)
@@ -80,7 +80,7 @@ class ProfileFragment : Fragment() {
 
         btnEnviar.setOnClickListener {
             val dniText = etDniNumber.text.toString().trim()
-            
+
             if (dniText.isEmpty()) {
                 Toast.makeText(requireContext(), "Escriu el número de DNI", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -94,14 +94,12 @@ class ProfileFragment : Fragment() {
             lifecycleScope.launch {
                 btnEnviar.isEnabled = false
                 btnEnviar.text = "Enviant..."
-                
-                // Enviar DNI y fotos (todo se cifra en el DniSocketClient)
+
                 val success = DniSocketClient.enviarDni(requireContext(), userId, dniText, uriFrontal, uriPosterior)
-                
+
                 if (success) {
                     Toast.makeText(requireContext(), "DNI enviat i xifrat amb AES", Toast.LENGTH_LONG).show()
                     etDniNumber.text.clear()
-                    // Reset visual
                     uriFrontal = null
                     uriPosterior = null
                     view.findViewById<TextView>(R.id.tvFrontalText).text = "Pujar part frontal"
@@ -109,7 +107,7 @@ class ProfileFragment : Fragment() {
                 } else {
                     Toast.makeText(requireContext(), "Error en el servidor de seguretat", Toast.LENGTH_LONG).show()
                 }
-                
+
                 btnEnviar.isEnabled = true
                 btnEnviar.text = "Enviar DNI xifrat"
             }
