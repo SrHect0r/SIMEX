@@ -15,7 +15,7 @@ object Constants {
     const val ESTAT_LLIURADA   = 15
 
     // Socket
-    const val SOCKET_HOST = "vps-5d4cfa08.vps.ovh.net"
+    const val SOCKET_HOST = "10.0.2.2"
     const val SOCKET_PORT = 9000
 
     // SharedPreferences
