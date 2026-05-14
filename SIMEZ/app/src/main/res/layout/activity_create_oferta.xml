@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nova Oferta"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tipus de transport"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerTransport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tipus de flux"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerFlux"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tipus de càrrega"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerCarrega"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Incoterm"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerIncoterm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Client"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerClient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/tvPortOrigen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Port Origen"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"
+            android:visibility="gone"/>
+
+        <Spinner
+            android:id="@+id/spinnerPortOrigen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tvPortDesti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Port Destí"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"
+            android:visibility="gone"/>
+
+        <Spinner
+            android:id="@+id/spinnerPortDesti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tvAeroportOrigen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aeroport Origen"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"
+            android:visibility="gone"/>
+
+        <Spinner
+            android:id="@+id/spinnerAeroportOrigen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tvAeroportDesti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aeroport Destí"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"
+            android:visibility="gone"/>
+
+        <Spinner
+            android:id="@+id/spinnerAeroportDesti"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tvLiniaMaritima"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Línia Transport Marítim"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"
+            android:visibility="gone"/>
+
+        <Spinner
+            android:id="@+id/spinnerLiniaMaritima"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tvTipusContenidor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tipus Contenidor"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"
+            android:visibility="gone"/>
+
+        <Spinner
+            android:id="@+id/spinnerTipusContenidor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingEnd="4dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pes Brut (kg)"
+                    android:textStyle="bold"/>
+                <EditText
+                    android:id="@+id/etPesBrut"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:text="0.0"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="4dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Volum (m3)"
+                    android:textStyle="bold"/>
+                <EditText
+                    android:id="@+id/etVolum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:text="0.0"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Comentaris"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp"/>
+
+        <EditText
+            android:id="@+id/etComentaris"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Afegeix comentaris..."
+            android:minLines="3"
+            android:layout_marginBottom="24dp"/>
+
+        <Button
+            android:id="@+id/btnCrearOferta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crear Oferta"/>
+
+    </LinearLayout>
+</ScrollView>
