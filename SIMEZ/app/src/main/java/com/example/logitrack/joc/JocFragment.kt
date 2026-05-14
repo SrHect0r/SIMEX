@@ -15,7 +15,7 @@ import com.example.logitrack.R
 
 class JocFragment : Fragment() {
 
-    val emojis = listOf("✈️", "🚢", "🚛", "📦", "🌍", "🚂", "⚓", "🏭")
+    val emojis = listOf("✈️", "🚢", "🚛", "📦", "🌍", "🚂", "⚓", "🏭", "⚓")
 
     var cartas = mutableListOf<String>()
     var cartasVolteadas = mutableListOf<Int>()
@@ -67,7 +67,7 @@ class JocFragment : Fragment() {
             params.height = 180
             params.columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f)
             params.rowSpec   = GridLayout.spec(GridLayout.UNDEFINED, 1f)
-            params.setMargins(4, 4, 4, 4)
+            params.setMargins(5, 5, 5, 5)
             boton.layoutParams = params
 
             boton.text = ""
@@ -105,7 +105,7 @@ class JocFragment : Fragment() {
                 cartasVolteadas.clear()
                 bloqueado = false
 
-                if (parejas == 8) {
+                if (parejas == 9) {
                     tvParejas.text = "¡Guanyat en $intentos intents!"
                 }
             } else {
