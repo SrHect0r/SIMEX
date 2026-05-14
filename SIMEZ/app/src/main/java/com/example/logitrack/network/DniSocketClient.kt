@@ -5,12 +5,14 @@ import android.net.Uri
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.DataOutputStream
+import java.io.File
 import java.net.Socket
 
 object DniSocketClient {
 
-    private const val HOST = "10.0.2.2" // localhost del emulador
+    private const val HOST = "10.0.2.2"
     private const val PORT = 9001
+
     suspend fun enviarDni(
         context: Context,
         userId: Int,
@@ -19,21 +21,30 @@ object DniSocketClient {
         uriPosterior: Uri?
     ): Boolean = withContext(Dispatchers.IO) {
         try {
-            // 1. Enviar número DNI (side = 2)
-            enviarDades(userId, 2, dniText.toByteArray())
+            // Crear carpeta local al dispositiu
+            val folder = File(context.filesDir, "dni/$userId")
+            folder.mkdirs()
 
-            // 2. Enviar foto frontal (side = 0)
+            // 1. Enviar i guardar número DNI (side = 2)
+            val dniBytes = dniText.toByteArray()
+            enviarDades(userId, 2, dniBytes)
+            File(folder, "dni_number.enc").writeBytes(dniBytes)
+
+            // 2. Enviar i guardar foto frontal (side = 0)
             uriFrontal?.let {
                 val bytes = context.contentResolver.openInputStream(it)!!.readBytes()
                 enviarDades(userId, 0, bytes)
+                File(folder, "frontal.enc").writeBytes(bytes)
             }
 
-            // 3. Enviar foto posterior (side = 1)
+            // 3. Enviar i guardar foto posterior (side = 1)
             uriPosterior?.let {
                 val bytes = context.contentResolver.openInputStream(it)!!.readBytes()
                 enviarDades(userId, 1, bytes)
+                File(folder, "posterior.enc").writeBytes(bytes)
             }
 
+            android.util.Log.d("DNI", "Arxius guardats a: ${folder.absolutePath}")
             true
         } catch (e: Exception) {
             e.printStackTrace()
