@@ -30,6 +30,10 @@
         <activity
             android:name="com.example.logitrack.detail.DetailActivity"
             android:exported="false"/>
+        <activity
+            android:name=".memory.MemoryActivity"
+            android:label="Memory"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
