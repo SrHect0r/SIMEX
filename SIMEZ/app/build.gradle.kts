@@ -39,6 +39,12 @@ android {
             jniLibs.srcDirs("libs")
         }
     }
+
+    packaging {
+        jniLibs {
+            useLegacyPackaging = true
+        }
+    }
 }
 
 kotlin {

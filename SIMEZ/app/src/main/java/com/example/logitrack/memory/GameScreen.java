@@ -4,6 +4,8 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector3;
@@ -12,24 +14,26 @@ public class GameScreen {
 
     private ShapeRenderer shapeRenderer;
     private OrthographicCamera camera;
+    private BitmapFont font;        // para dibujar texto
+    private SpriteBatch batch;      // necesario para dibujar texto
+    private boolean gameWon = false; // estado de victoria
 
-    // Colores para cada par de cartas (8 pares = 16 cartas)
     private static final Color[] COLORS = {
             Color.RED, Color.BLUE, Color.GREEN, Color.YELLOW,
-            Color.ORANGE, Color.PURPLE, Color.CYAN, Color.PINK
+            Color.ORANGE, Color.PURPLE, Color.CYAN, Color.PINK, Color.BROWN
     };
 
-    private int[] cardValues;      // valor de cada carta (0-7, indica el par)
-    private boolean[] flipped;     // si la carta está boca arriba
-    private boolean[] matched;     // si la carta ya está emparejada
+    private int[] cardValues;
+    private boolean[] flipped;
+    private boolean[] matched;
 
-    private int firstFlipped = -1;  // índice de la primera carta volteada
-    private int secondFlipped = -1; // índice de la segunda carta volteada
-    private float waitTimer = 0f;   // temporizador para ocultar cartas no emparejadas
+    private int firstFlipped = -1;
+    private int secondFlipped = -1;
+    private float waitTimer = 0f;
 
     private static final int COLS = 4;
     private static final int ROWS = 4;
-    private static final int TOTAL = COLS * ROWS; // 16 cartas
+    private static final int TOTAL = COLS * ROWS;
 
     private Rectangle[] cardRects;
 
@@ -38,13 +42,16 @@ public class GameScreen {
         camera = new OrthographicCamera();
         camera.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
-        // Inicializar cartas
+        //inicializar font y batch
+        font = new BitmapFont();
+        font.getData().setScale(5f);
+        batch = new SpriteBatch();
+
         cardValues = new int[TOTAL];
         flipped = new boolean[TOTAL];
         matched = new boolean[TOTAL];
         cardRects = new Rectangle[TOTAL];
 
-        // Crear pares y mezclar
         int[] values = new int[TOTAL];
         for (int i = 0; i < TOTAL; i++) {
             values[i] = i / 2;
@@ -52,7 +59,6 @@ public class GameScreen {
         shuffle(values);
         cardValues = values;
 
-        // Calcular posición y tamaño de cada carta
         float padding = 20f;
         float cardW = (Gdx.graphics.getWidth() - padding * (COLS + 1)) / COLS;
         float cardH = (Gdx.graphics.getHeight() - padding * (ROWS + 1)) / ROWS;
@@ -67,17 +73,20 @@ public class GameScreen {
     }
 
     public void render() {
-        // Limpiar pantalla
         Gdx.gl.glClearColor(0.15f, 0.15f, 0.15f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         camera.update();
 
-        // Manejar espera entre cartas
+        // Si ya ganó, solo mostrar pantalla de victoria
+        if (gameWon) {
+            mostrarVictoria();
+            return;
+        }
+
         if (secondFlipped != -1) {
             waitTimer += Gdx.graphics.getDeltaTime();
             if (waitTimer > 1.2f) {
-                // Comprobar si son pareja
                 if (cardValues[firstFlipped] == cardValues[secondFlipped]) {
                     matched[firstFlipped] = true;
                     matched[secondFlipped] = true;
@@ -91,7 +100,6 @@ public class GameScreen {
             }
         }
 
-        // Detectar toque
         if (Gdx.input.justTouched() && secondFlipped == -1) {
             Vector3 touch = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
             camera.unproject(touch);
@@ -109,7 +117,6 @@ public class GameScreen {
             }
         }
 
-        // Dibujar cartas
         shapeRenderer.setProjectionMatrix(camera.combined);
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
 
@@ -126,6 +133,44 @@ public class GameScreen {
         }
 
         shapeRenderer.end();
+
+        // comprobar si ha ganado tras dibujar las cartas
+        comprobarVictoria();
+    }
+
+    // comprueba si todas las cartas están emparejadas
+    private void comprobarVictoria() {
+        for (boolean m : matched) {
+            if (!m) return;
+        }
+        gameWon = true;
+    }
+
+    //dibuja la pantalla de victoria
+    private void mostrarVictoria() {
+        shapeRenderer.setProjectionMatrix(camera.combined);
+        shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+        shapeRenderer.setColor(0.1f, 0.1f, 0.1f, 1f);
+        shapeRenderer.rect(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        shapeRenderer.end();
+
+        batch.setProjectionMatrix(camera.combined);
+        batch.begin();
+        font.setColor(Color.YELLOW);
+        font.draw(batch, "HAS GANADO!",
+                Gdx.graphics.getWidth() / 2f - 200,
+                Gdx.graphics.getHeight() / 2f + 50);
+        font.setColor(Color.WHITE);
+        font.draw(batch, "Toca para volver a empezar",
+                Gdx.graphics.getWidth() / 2f - 180,
+                Gdx.graphics.getHeight() / 2f - 50);
+        batch.end();
+
+       // si toca la pantalla, reinicia el juego
+        if (Gdx.input.justTouched()) {
+            gameWon = false;
+            create();
+        }
     }
 
     public void resize(int width, int height) {
@@ -134,6 +179,8 @@ public class GameScreen {
 
     public void dispose() {
         shapeRenderer.dispose();
+        font.dispose();
+        batch.dispose();
     }
 
     private void shuffle(int[] array) {

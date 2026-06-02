@@ -114,10 +114,8 @@ class ProfileFragment : Fragment() {
         }
 
         btnJoc.setOnClickListener {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.frameContainer, com.example.logitrack.joc.JocFragment())
-                .addToBackStack(null)
-                .commit()
+            val intent = Intent(requireContext(), com.example.logitrack.memory.MemoryActivity::class.java)
+            startActivity(intent)
         }
 
         btnLogout.setOnClickListener {
