@@ -1,40 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="32dp"
-    android:gravity="center">
+    android:background="@color/white"
+    android:fillViewport="true">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="LogiTrack"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="40dp"/>
-
-    <EditText
-        android:id="@+id/etEmail"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Correu electrònic"
-        android:inputType="textEmailAddress"
-        android:layout_marginBottom="16dp"/>
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Contrasenya"
-        android:inputType="textPassword"
-        android:layout_marginBottom="24dp"/>
+        <!-- Background Decoration (Simplified) -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="256dp"
+            android:background="@color/brand_primary"
+            android:alpha="0.1"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Entrar"/>
+        <LinearLayout
+            android:id="@+id/logoContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-</LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:cardBackgroundColor="@color/brand_secondary"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_launcher_foreground"
+                    app:tint="@color/white" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-black"
+                android:text="LogiTrack"
+                android:textColor="@color/brand_primary"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="La teva logística, simplificada."
+                android:textColor="@color/gray_500"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/logoContainer">
+
+            <!-- Role Selector Placeholder (Simplified) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="24dp"
+                android:background="@color/gray_100"
+                android:orientation="horizontal"
+                android:padding="4dp">
+
+                <TextView
+                    android:id="@+id/btnRoleClient"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:text="Client"
+                    android:textColor="@color/brand_primary"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/btnRoleEmployee"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Empleat"
+                    android:textColor="@color/gray_500" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="6dp"
+                android:text="Correu electrònic"
+                android:textColor="@color/gray_600"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/input_bg"
+                android:hint="client@empresa.cat"
+                android:inputType="textEmailAddress"
+                android:paddingHorizontal="16dp"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="6dp"
+                android:text="Contrasenya"
+                android:textColor="@color/gray_600"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/input_bg"
+                android:hint="••••••••"
+                android:inputType="textPassword"
+                android:paddingHorizontal="16dp"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:backgroundTint="@color/brand_dark_red"
+                android:text="Iniciar sessió"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:text="© 2024 LogiTrack S.L."
+            android:textColor="@color/gray_400"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

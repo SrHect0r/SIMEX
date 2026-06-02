@@ -27,6 +27,7 @@
         <activity
             android:name="com.example.logitrack.MainActivity"
             android:exported="false"/>
+
         <activity
             android:name="com.example.logitrack.detail.DetailActivity"
             android:exported="false"/>
@@ -34,6 +35,10 @@
             android:name=".memory.MemoryActivity"
             android:label="Memory"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.example.logitrack.create.CreateOfertaActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>

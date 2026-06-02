@@ -16,6 +16,7 @@ import com.example.logitrack.data.Oferte
 import com.example.logitrack.detail.DetailActivity
 import com.example.logitrack.network.RetrofitClient
 import com.google.android.material.tabs.TabLayout
+import com.example.logitrack.utils.Constants
 import kotlinx.coroutines.launch
 
 class OrdersFragment : Fragment() {
@@ -36,13 +37,13 @@ class OrdersFragment : Fragment() {
 
         val tabFilter = view.findViewById<TabLayout>(R.id.tabFilter)
 
-        val prefs = requireContext().getSharedPreferences("logitrack", 0)
-        val userId = prefs.getInt("userId", -1)
-        val rolId = prefs.getInt("rolId", -1)
+        val prefs = requireContext().getSharedPreferences(Constants.PREFS_NAME, 0)
+        val userId = prefs.getInt(Constants.PREF_USER_ID, -1)
+        val rolId = prefs.getInt(Constants.PREF_ROL_ID, -1)
 
         lifecycleScope.launch {
             try {
-                val response = if (rolId == 2) {
+                val response = if (rolId == Constants.ROL_AGENT || rolId == Constants.ROL_ADMIN) {
                     RetrofitClient.instance.getOfertes()
                 } else {
                     RetrofitClient.instance.getOfertesByClient(userId)
@@ -62,9 +63,9 @@ class OrdersFragment : Fragment() {
         tabFilter.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 val filtrades = when (tab?.position) {
-                    1 -> todesOfertes.filter { it.estatOfertaId == 11 } // Pendent
-                    2 -> todesOfertes.filter { it.estatOfertaId == 12 } // Acceptada
-                    3 -> todesOfertes.filter { it.estatOfertaId == 14 } // En trànsit
+                    1 -> todesOfertes.filter { it.estatOfertaId == Constants.ESTAT_PENDENT }
+                    2 -> todesOfertes.filter { it.estatOfertaId == Constants.ESTAT_ACCEPTADA }
+                    3 -> todesOfertes.filter { it.estatOfertaId == Constants.ESTAT_EN_TRANSIT }
                     else -> todesOfertes
                 }
                 mostrarOfertes(filtrades)
@@ -72,6 +73,14 @@ class OrdersFragment : Fragment() {
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
             override fun onTabReselected(tab: TabLayout.Tab?) {}
         })
+
+        val fabCrear = view.findViewById<com.google.android.material.floatingactionbutton.FloatingActionButton>(R.id.fabCrearOferta)
+        if (rolId == Constants.ROL_AGENT || rolId == Constants.ROL_ADMIN) {
+            fabCrear.visibility = View.VISIBLE
+            fabCrear.setOnClickListener {
+                startActivity(Intent(requireContext(), com.example.logitrack.create.CreateOfertaActivity::class.java))
+            }
+        }
     }
 
     private fun mostrarOfertes(ofertes: List<Oferte>) {
@@ -101,16 +110,26 @@ class OfertesAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val oferta = items[position]
-        holder.tvId.text = "Oferta #${oferta.id}"
-        holder.tvEstat.text = when (oferta.estatOfertaId) {
-            11 -> "Estat: Pendent"
-            12 -> "Estat: Acceptada"
-            13 -> "Estat: Rebutjada"
-            14 -> "Estat: En trànsit"
-            15 -> "Estat: Finalitzada"
-            else -> "Estat: ${oferta.estatOfertaId}"
+        val context = holder.itemView.context
+
+        holder.tvId.text = "LOG-2024-${oferta.id}"
+        holder.tvData.text = oferta.dataCreacio
+
+        val (text, bgColor, textColor) = when (oferta.estatOfertaId) {
+            Constants.ESTAT_PENDENT -> Triple("PENDENT", R.color.status_pending_bg, R.color.status_pending_text)
+            Constants.ESTAT_ACCEPTADA -> Triple("ACCEPTADA", R.color.status_recollit_bg, R.color.status_recollit_text)
+            Constants.ESTAT_EN_TRANSIT -> Triple("EN TRÀNSIT", R.color.status_transit_bg, R.color.status_transit_text)
+            Constants.ESTAT_LLIURADA -> Triple("LLIURADA", R.color.status_delivered_bg, R.color.status_delivered_text)
+            else -> Triple("OFERTA", R.color.gray_100, R.color.gray_600)
         }
-        holder.tvData.text = "Data: ${oferta.dataCreacio}"
+
+        holder.tvEstat.text = text
+        holder.tvEstat.backgroundTintList = android.content.res.ColorStateList.valueOf(
+            androidx.core.content.ContextCompat.getColor(context, bgColor)
+        )
+        holder.tvEstat.setTextColor(androidx.core.content.ContextCompat.getColor(context, textColor))
+        holder.tvEstat.setBackgroundResource(R.drawable.input_bg)
+
         holder.itemView.setOnClickListener { onClick(oferta) }
     }
 

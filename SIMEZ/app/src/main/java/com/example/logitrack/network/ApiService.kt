@@ -43,8 +43,44 @@ interface ApiService {
     @POST("api/Ofertes/{id}/acceptar")
     suspend fun acceptarOferta(@Path("id") id: Int): Response<Unit>
 
+    @GET("api/Documents/oferta/{ofertaId}")
+    suspend fun getDocumentsByOferta(@Path("ofertaId") ofertaId: Int): Response<List<Document>>
+
+    @GET("api/Documents")
+    suspend fun getDocuments(): Response<List<Document>>
+
     @POST("api/Ofertes/{id}/rebutjar")
     suspend fun rebutjarOferta(@Path("id") id: Int, @Body request: RebutjarRequest): Response<Unit>
+
+    @GET("api/TipusTransports")
+    suspend fun getTipusTransports(): Response<List<TipusTransport>>
+
+    @GET("api/TipusFluxes")
+    suspend fun getTipusFluxes(): Response<List<TipusFlux>>
+
+    @GET("api/TipusCarregas")
+    suspend fun getTipusCarregas(): Response<List<TipusCarrega>>
+
+    @GET("api/Incoterms")
+    suspend fun getIncoterms(): Response<List<Incoterm>>
+
+    @GET("api/Clients")
+    suspend fun getClients(): Response<List<Client>>
+
+    @GET("api/Ports")
+    suspend fun getPorts(): Response<List<Port>>
+
+    @GET("api/Aeroports")
+    suspend fun getAeroports(): Response<List<Aeroport>>
+
+    @GET("api/TipusContenidors")
+    suspend fun getTipusContenidors(): Response<List<TipusContenidor>>
+
+    @GET("api/LiniesTransportMaritim")
+    suspend fun getLiniesTransportMaritim(): Response<List<LiniesTransportMaritim>>
+
+    @POST("api/Ofertes")
+    suspend fun createOferta(@Body oferta: Oferte): Response<Oferte>
 }
 
 object RetrofitClient {

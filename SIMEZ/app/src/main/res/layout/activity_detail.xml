@@ -1,70 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tvDetailTitle"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp"/>
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <TextView
-        android:id="@+id/tvDetailEstat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_marginBottom="4dp"/>
+        <TextView
+            android:id="@+id/tvDetailTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
 
-    <TextView
-        android:id="@+id/tvDetailData"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:textColor="#666666"
-        android:layout_marginBottom="16dp"/>
+        <TextView
+            android:id="@+id/tvDetailEstat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginBottom="4dp"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Tracking"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp"/>
+        <TextView
+            android:id="@+id/tvDetailData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="16dp"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerTracking"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tracking"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
 
-    <Button
-        android:id="@+id/btnNextEstat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Avançar estat"
-        android:visibility="gone"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerTracking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"/>
 
-    <Button
-        android:id="@+id/btnAcceptar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Acceptar oferta"
-        android:backgroundTint="#4CAF50"
-        android:visibility="gone"/>
+        <Button
+            android:id="@+id/btnNextEstat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Avançar estat"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"/>
 
-    <Button
-        android:id="@+id/btnRebutjar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Rebutjar oferta"
-        android:backgroundTint="#F44336"
-        android:layout_marginTop="8dp"
-        android:visibility="gone"/>
+        <Button
+            android:id="@+id/btnAcceptar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Acceptar oferta"
+            android:backgroundTint="#4CAF50"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"/>
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btnRebutjar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rebutjar oferta"
+            android:backgroundTint="#F44336"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Documents"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerDocuments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"/>
+
+    </LinearLayout>
+
+</ScrollView>
